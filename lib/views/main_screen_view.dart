@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../views/first_task_view.dart';
+import '../views/second_task_view.dart';
 
 class MainScreenView extends StatelessWidget {
   const MainScreenView({Key? key}) : super(key: key);
@@ -8,13 +9,13 @@ class MainScreenView extends StatelessWidget {
   Widget build(context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Main Screen"),
+          title: const Text("Main Screen"),
           centerTitle: true,
           elevation: 1.0,
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
+            padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -28,8 +29,10 @@ class MainScreenView extends StatelessWidget {
                 ),
                 Card(
                   child: ListTile(
-                    title: Text('II. API Integration'),
-                    trailing: Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const SecondTaskView())),
+                    title: const Text('II. API Integration'),
+                    trailing: const Icon(Icons.chevron_right),
                   ),
                 ),
                 Card(
