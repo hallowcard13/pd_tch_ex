@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../views/first_task_view.dart';
 import '../views/second_task_view.dart';
+import '../views/third_task_view.dart';
 
 class MainScreenView extends StatelessWidget {
   const MainScreenView({Key? key}) : super(key: key);
@@ -37,8 +38,10 @@ class MainScreenView extends StatelessWidget {
                 ),
                 Card(
                   child: ListTile(
-                    title: Text('III. Data Manipulation'),
-                    trailing: Icon(Icons.chevron_right),
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const ThirdTaskView())),
+                    title: const Text('III. Data Manipulation'),
+                    trailing: const Icon(Icons.chevron_right),
                   ),
                 ),
                 Card(
