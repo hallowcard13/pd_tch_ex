@@ -22,7 +22,7 @@ class FirstTaskView extends StatelessWidget {
               onTap: () => Navigator.of(context).pop,
               child: const Icon(Icons.arrow_back),
             ),
-            const Text('CREDIT LEDGER', style: TextStyle(fontSize: 22.0)),
+            const Text('CREDIT LEDGER', style: TextStyle(fontSize: 20.0)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -30,19 +30,19 @@ class FirstTaskView extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 3.0),
                   child: const Icon(
                     Icons.sort_by_alpha,
-                    color: Colors.pink,
+                    color: Color(0xFFbd4b88),
                     size: 25.0,
                   ),
                 ),
                 Container(
                     padding: const EdgeInsets.symmetric(horizontal: 3.0),
                     child: const Icon(Icons.search,
-                        color: Colors.pink, size: 25.0)),
+                        color: Color(0xFFbd4b88), size: 25.0)),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 3.0),
                   child: const Icon(
                     Icons.mail_outlined,
-                    color: Colors.pink,
+                    color: Color(0xFFbd4b88),
                     size: 25.0,
                   ),
                 ),
@@ -50,7 +50,7 @@ class FirstTaskView extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 3.0),
                   child: const Icon(
                     Icons.settings,
-                    color: Colors.pink,
+                    color: Color(0xFFbd4b88),
                     size: 25.0,
                   ),
                 ),
@@ -142,7 +142,7 @@ class FirstTaskView extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
                           child: Column(
                             children: [
                               const Text(
@@ -151,15 +151,323 @@ class FirstTaskView extends StatelessWidget {
                               ),
                               Text(
                                 '${NumberFormat.simpleCurrency(name: 'PHP').currencySymbol}86.00',
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.red,
                                     fontWeight: FontWeight.bold),
                               )
                             ],
                           ),
-                        )
+                        ),
                       ],
                     )
+                  ],
+                ),
+              ),
+              // 3 buttons and date picker
+              Container(
+                margin: const EdgeInsets.only(top: 15.0, bottom: 15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                        width: 55,
+                        padding: const EdgeInsets.only(
+                            left: 5.0, right: 5.0, top: 3.0, bottom: 3.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5.0),
+                            color: Colors.indigo[600]),
+                        child: const Text('All',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Colors.white, fontSize: 12.0))),
+                    Container(
+                        width: 55,
+                        padding: const EdgeInsets.only(
+                            left: 5.0, right: 5.0, top: 3.0, bottom: 3.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5.0),
+                            border: Border.all(color: Colors.black)),
+                        child: const Text('Unpaid',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 12.0))),
+                    Container(
+                        width: 55,
+                        padding: const EdgeInsets.only(
+                            left: 5.0, right: 5.0, top: 3.0, bottom: 3.0),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5.0),
+                            border: Border.all(color: Colors.black)),
+                        child: const Text('Paid',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 12.0))),
+                    Container(
+                      width: 150,
+                      padding: const EdgeInsets.only(
+                          left: 10.0, right: 10.0, top: 5.0, bottom: 5.0),
+                      decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(50.0)),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Due Date',
+                            style: TextStyle(fontSize: 12.0),
+                          ),
+                          Icon(
+                            Icons.calendar_today_outlined,
+                            size: 18.0,
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              // Table Headers/ Titles
+              Container(
+                padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                        width: 100.0,
+                        child: const Text(
+                          'Reminder',
+                          style: TextStyle(fontSize: 12.0),
+                        )),
+                    Container(
+                        width: 100.0,
+                        child: const Text('Customer Name',
+                            style: TextStyle(fontSize: 12.0))),
+                    Container(
+                        width: 100.0,
+                        child: const Text('Balance',
+                            style: TextStyle(fontSize: 12.0))),
+                  ],
+                ),
+              ),
+              // List view items
+              Container(
+                height: 300.0,
+                margin: const EdgeInsets.only(top: 10.0),
+                child: ListView(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(
+                          top: 10.0, bottom: 10.0, left: 10.0, right: 10.0),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black45,
+                              blurRadius: 5.0,
+                            )
+                          ]),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 100,
+                            padding: const EdgeInsets.only(
+                                top: 5.0, bottom: 5.0, left: 10.0, right: 10.0),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: const Color(0xFFfc3395)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text('REMIND',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10.0)),
+                                Container(
+                                  padding: const EdgeInsets.all(2.0),
+                                  margin: const EdgeInsets.only(left: 4.0),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      color: Colors.white),
+                                  child: const Icon(
+                                    Icons.notifications,
+                                    size: 12.0,
+                                    color: Color(0xFFfc3395),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 100.0,
+                            child: const Text(
+                              'Juan Dela Cruz',
+                              style: TextStyle(fontSize: 12.0),
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          Container(
+                              width: 105.0,
+                              padding: const EdgeInsets.only(
+                                left: 5.0,
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                      '${NumberFormat.simpleCurrency(name: 'PHP').currencySymbol}10.00',
+                                      style: const TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold)),
+                                  const Icon(Icons.chevron_right)
+                                ],
+                              )),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 15),
+                      padding: const EdgeInsets.only(
+                          top: 10.0, bottom: 10.0, left: 10.0, right: 10.0),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black45,
+                              blurRadius: 5.0,
+                            )
+                          ]),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 100,
+                            padding: const EdgeInsets.only(
+                                top: 5.0, bottom: 5.0, left: 10.0, right: 10.0),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: const Color(0xFFfc3395)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text('REMIND',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10.0)),
+                                Container(
+                                  padding: const EdgeInsets.all(2.0),
+                                  margin: const EdgeInsets.only(left: 4.0),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      color: Colors.white),
+                                  child: const Icon(
+                                    Icons.notifications,
+                                    size: 12.0,
+                                    color: Color(0xFFfc3395),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 100.0,
+                            child: const Text(
+                              'Mel Francis',
+                              style: TextStyle(fontSize: 12.0),
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          Container(
+                              width: 105.0,
+                              padding: const EdgeInsets.only(
+                                left: 5.0,
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                      '${NumberFormat.simpleCurrency(name: 'PHP').currencySymbol}76.00',
+                                      style: const TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold)),
+                                  const Icon(Icons.chevron_right)
+                                ],
+                              )),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 10.0),
+                      padding: const EdgeInsets.only(
+                          top: 10.0, bottom: 10.0, left: 10.0, right: 10.0),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black45,
+                              blurRadius: 5.0,
+                            )
+                          ]),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 100,
+                            padding: const EdgeInsets.only(
+                                top: 5.0, bottom: 5.0, left: 10.0, right: 10.0),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(5),
+                                color: const Color(0xFFbdbdbd)),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text('REMIND',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10.0)),
+                                Container(
+                                  padding: const EdgeInsets.all(2.0),
+                                  margin: const EdgeInsets.only(left: 4.0),
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      color: Colors.white),
+                                  child: const Icon(
+                                    Icons.notifications,
+                                    size: 12.0,
+                                    color: Color(0xFFbdbdbd),
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            width: 100.0,
+                            child: const Text(
+                              'Pedro Peduko',
+                              style: TextStyle(fontSize: 12.0),
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          Container(
+                              width: 105.0,
+                              padding: const EdgeInsets.only(
+                                left: 5.0,
+                              ),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                      '${NumberFormat.simpleCurrency(name: 'PHP').currencySymbol}0.00',
+                                      style: const TextStyle(
+                                          fontSize: 12.0,
+                                          fontWeight: FontWeight.bold)),
+                                  const Icon(Icons.chevron_right)
+                                ],
+                              )),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               )
@@ -167,6 +475,30 @@ class FirstTaskView extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: Container(
+          width: 200.0,
+          padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
+          decoration: BoxDecoration(
+            color: const Color(0xFFe72f92),
+            borderRadius: BorderRadius.circular(40),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+              Container(
+                margin: const EdgeInsets.only(left: 5.0),
+                child: const Text(
+                  'ADD CUSTOMER',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w300),
+                ),
+              )
+            ],
+          )),
     );
   }
 }
