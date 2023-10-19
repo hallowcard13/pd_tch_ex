@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import './views/main_screen_view.dart';
+import './blocs/counter_bloc.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiBlocProvider(
+      providers: [BlocProvider(create: ((context) => CounterBloc()))],
+      child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,6 +22,6 @@ class MyApp extends StatelessWidget {
               seedColor: Colors.deepPurple, background: Colors.white),
           useMaterial3: true,
         ),
-        home: const MainScreenView());
+        home: MainScreenView());
   }
 }

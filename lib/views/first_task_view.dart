@@ -8,18 +8,18 @@ class FirstTaskView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(56),
+        preferredSize: const Size.fromHeight(100),
         child: Container(
           decoration: const BoxDecoration(boxShadow: [
             BoxShadow(
                 color: Colors.black54, blurRadius: 4.0, offset: Offset(0, 1.0))
           ], color: Colors.white),
           padding: const EdgeInsets.only(
-              top: 56.0, left: 20, right: 20, bottom: 10.0),
+              top: 100.0, left: 20, right: 20, bottom: 10.0),
           child:
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             GestureDetector(
-              onTap: () => Navigator.of(context).pop,
+              onTap: () => Navigator.of(context).pop(),
               child: const Icon(Icons.arrow_back),
             ),
             const Text('CREDIT LEDGER', style: TextStyle(fontSize: 20.0)),
