@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../views/first_task_view.dart';
 import '../views/second_task_view.dart';
 import '../views/third_task_view.dart';
+import '../views/fourth_task_view.dart';
 
 class MainScreenView extends StatelessWidget {
   const MainScreenView({Key? key}) : super(key: key);
@@ -46,6 +47,8 @@ class MainScreenView extends StatelessWidget {
                 ),
                 Card(
                   child: ListTile(
+                    onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const FourthTaskView())),
                     title: Text('IV: State Management'),
                     trailing: Icon(Icons.chevron_right),
                   ),
